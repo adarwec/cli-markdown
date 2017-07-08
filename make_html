@@ -13,7 +13,7 @@ export OPATH=$DIRNAME'/'$MDNAME'.html'
 export BIBPATH=$DIRNAME'/'$BIBFILE 
 export CSLPATH=$DIRNAME'/styles/csl/'$CSLFILE 
 export HTMLPATH=$DIRNAME'/styles/html/'$HTMLFILE
-export CSSPATH=$DIRNAME'/styles/html/'$CSSFILE
+export CSSPATH=$DIRNAME'/styles/css/'$CSSFILE
 
 
 echo "Compiling markdowin file into html using,"
