@@ -1,0 +1,24 @@
+MDFILE='manuscript.md'
+BIBFILE='main.bib'
+CSLFILE='jneurophys.csl'
+TEXFILE='default.tex'
+
+
+
+DIRNAME=$"$PWD"
+MDNAME=$(echo $MDFILE | cut -f 1 -d '.')
+export FPATH=$DIRNAME'/'$MDFILE
+export OPATH=$DIRNAME'/'$MDNAME'.pdf'  
+export BIBPATH=$DIRNAME'/'$BIBFILE 
+export CSLPATH=$DIRNAME'/styles/csl/'$CSLFILE 
+export TEXPATH=$DIRNAME'/styles/latex/'$TEXFILE
+
+echo "Compiling markdowin file into pdf using,"
+echo "md:  $FPATH"
+echo "bib: $BIBPATH"
+echo "csl: $CSLPATH"
+echo "tex: $TEXPATH"
+echo "out: $OPATH"
+
+pandoc $FPATH --latex-engine=pdflatex -o $OPATH --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --template $TEXPATH
+
