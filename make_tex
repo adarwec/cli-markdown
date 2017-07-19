@@ -1,4 +1,4 @@
-MDFILE='manuscript.md'
+MDFILE='dystonia.md'
 BIBFILE='main.bib'
 CSLFILE='jneurophys.csl'
 TEXFILE='default.tex'
@@ -8,7 +8,7 @@ TEXFILE='default.tex'
 DIRNAME=$"$PWD"
 MDNAME=$(echo $MDFILE | cut -f 1 -d '.')
 export FPATH=$DIRNAME'/'$MDFILE
-export OPATH=$DIRNAME'/'$MDNAME'.pdf'  
+export OPATH=$DIRNAME'/'$MDNAME'.tex'  
 export BIBPATH=$DIRNAME'/'$BIBFILE 
 export CSLPATH=$DIRNAME'/styles/csl/'$CSLFILE 
 export TEXPATH=$DIRNAME'/styles/latex/'$TEXFILE
@@ -20,5 +20,5 @@ echo "csl: $CSLPATH"
 echo "tex: $TEXPATH"
 echo "out: $OPATH"
 
-pandoc $FPATH --latex-engine=pdflatex -o $OPATH --self-contained --standalone --smart --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --template $TEXPATH
+pandoc $FPATH --latex-engine=xelatex -o $OPATH --self-contained --standalone --smart --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --template $TEXPATH
 
