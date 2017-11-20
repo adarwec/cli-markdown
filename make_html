@@ -24,7 +24,7 @@ echo "html: $HTMLPATH"
 echo "css:  $CSSPATH"
 echo "out:  $OPATH"
 
-pandoc $FPATH --output $OPATH --smart --email-obfuscation none --self-contained --standalone --section-divs --template $HTMLPATH --no-highlight --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --css $CSSPATH
+pandoc $FPATH --output $OPATH -f markdown+smart --email-obfuscation none --self-contained --standalone --section-divs --template $HTMLPATH --no-highlight --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --css $CSSPATH
 
 
 

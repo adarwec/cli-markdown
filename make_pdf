@@ -20,5 +20,5 @@ echo "csl: $CSLPATH"
 echo "tex: $TEXPATH"
 echo "out: $OPATH"
 
-pandoc $FPATH --latex-engine=pdflatex -o $OPATH --self-contained --standalone --smart --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --template $TEXPATH
+pandoc $FPATH --pdf-engine=pdflatex -o $OPATH --self-contained --standalone -f markdown+smart --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --template $TEXPATH
 

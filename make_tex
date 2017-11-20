@@ -1,4 +1,4 @@
-MDFILE='dystonia.md'
+MDFILE='manuscript.md'
 BIBFILE='main.bib'
 CSLFILE='jneurophys.csl'
 TEXFILE='default.tex'
@@ -20,5 +20,5 @@ echo "csl: $CSLPATH"
 echo "tex: $TEXPATH"
 echo "out: $OPATH"
 
-pandoc $FPATH --latex-engine=xelatex -o $OPATH --self-contained --standalone --smart --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --template $TEXPATH
+pandoc $FPATH --pdf-engine=xelatex -o $OPATH --self-contained --standalone -f markdown+smart --bibliography $BIBPATH --filter pandoc-citeproc --csl $CSLPATH --template $TEXPATH
 
